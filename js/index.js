@@ -120,7 +120,13 @@ const getWarningMessage = message => {
   );
 };
 
-let screenSize = null;
+
+const screenSize = detectSize();
+if (screenSize === "sm") {
+  $("#main").html(sm);
+} else {
+  $("#main").html(lg);
+}
 
 $(document).ready(function() {
   $(window).resize(function() {
@@ -128,13 +134,6 @@ $(document).ready(function() {
       location.reload();
     }
   });
-
-  screenSize = detectSize();
-  if (screenSize === "sm") {
-    $("#main").html(sm);
-  } else {
-    $("#main").html(lg);
-  }
 
   $("#get_emos").click(function() {
     const num_emos = $("#num_emos").val();
