@@ -60,7 +60,7 @@ $.fn.extend({
 });
 
 const getEmojis = async (sentence, num_of_emos) => {
-  const data = await fetch("http://127.0.0.1:5000/predict", {
+  const data = await fetch("https://emojify.pythonanywhere.com/predict", {
     method: "POST",
     body: JSON.stringify({ sentence, num_of_emos }),
     headers: { "Content-Type": "application/json" }
