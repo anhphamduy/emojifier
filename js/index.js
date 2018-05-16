@@ -120,15 +120,15 @@ const getWarningMessage = message => {
   );
 };
 
-
-const screenSize = detectSize();
-if (screenSize === "sm") {
-  $("#main").html(sm);
-} else {
-  $("#main").html(lg);
-}
-
 $(document).ready(function() {
+  const screenSize = detectSize();
+  console.log(screenSize);
+  if (screenSize === "sm") {
+    $("#main").html(sm);
+  } else {
+    $("#main").html(lg);
+  }
+
   $(window).resize(function() {
     if (detectSize() !== screenSize) {
       location.reload();
