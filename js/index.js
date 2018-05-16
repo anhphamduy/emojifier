@@ -120,9 +120,10 @@ const getWarningMessage = message => {
   );
 };
 
+let screenSize = null;
+
 $(document).ready(function() {
-  const screenSize = detectSize();
-  console.log(screenSize);
+  screenSize = detectSize();
   if (screenSize === "sm") {
     $("#main").html(sm);
   } else {
