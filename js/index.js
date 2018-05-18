@@ -155,10 +155,13 @@ $(document).ready(function() {
       FadeIn(".spinner");
       $("#get_emos").prop("disabled", true);
       $.when(getEmojis(sentence, num_emos)).then(emoji => {
+        console.log(emoji)
+        
         if (!emoji) {
-          console.log("Hi");
           FadeOut(".spinner");
           $("#get_emos").prop("disabled", false);
+          $("#status-text").html("")
+          $("#status-text").css("display", "block");
         } else {
           let result = "";
           Object.keys(emoji.result).forEach(
@@ -170,9 +173,10 @@ $(document).ready(function() {
             $("#status-text").text(`${emoji.sentence} ${result}`);
             $("#status-text").css("display", "block");
             $("#status-text").animateCss("fadeInRight");
-            $("#get_emos").prop("disabled", false);
+            $("#get_emos").prop("disabled", false); 
           }, 1200);
         }
+        
       });
     }
   });
