@@ -67,7 +67,7 @@ const getEmojis = async (sentence, num_of_emos) => {
   });
 
   if (!data.ok) {
-    getWarningMessage("Speelings are wrong or words do not exist");
+    getWarningMessage("Spellings are wrong or words do not exist");
     return false;
   }
 
